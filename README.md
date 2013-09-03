@@ -4,7 +4,7 @@ lupine-ide
 Model-driven IDE Project for the Common Lisp Interface Manager (CLIM)
 
 
-## Notes
+## Notes - Design
 
 ### Concept: Tree-View Pane
 
@@ -75,3 +75,34 @@ Further notes:
 	accepting-values accept condition: Input 'S is not of required type CLASS-NAME
 	accepting-values accept condition: Error parsing "'" for presentation type CLASS-NAME
 	accepting-values accept condition: Error parsing "" for presentation type CLASS-NAME
+
+
+### Concept: Generic Layout Protocol
+
+#### Summary
+
+The Lupine-IDE may implement or extend a sort of generic layout
+protocol deriving from the formatting controls presented in the W3C
+cascading stylesheets (CSS) specification.
+
+#### Implementation Plan
+
+1. First look at the [_Closure_ web browser][closure], to noting that
+it implements CSS 1 and some of CSS 2.
+
+2. Consider extending the CSS support in [Closure][closure], as for
+   purpose of:
+
+   1. Define a _fomatted-foo-pane_ class
+   2. Define procedures for applying [Closure][closure]'s CSS support
+   in formatting and layout, in presentation of _presentation type_
+   objects (selecting by presentation type class name, momentarily
+   disregarding other CSS selectors) on a _formatted-foo-pane_.
+       * Note that CSS may be more easily applicable for objects
+	     having a rectangular presentation, including text blocks, but
+	     may be applied - with some procedural formatlity - in order
+	     to govern layout of the "Bounding shape" (e.g. ellipse) of
+	     ojects not presented with a rectangular presentation
+
+
+[closure]: http://common-lisp.net/project/closure/
