@@ -44,7 +44,7 @@ Further notes:
   ASDF sysetm definitions and conventional filesystem directories
 
 * CLIM defines a generic graphing protocol, including the procedure,
-  `format-graph-from-roots`
+  `format-graph-from-roots`, cf. _[CLIM Operators for Graph Formatting](http://www.lispworks.com/documentation/lw60/CLIM/html/climuser-285.htm)_ and  _[Examples of CLIM Graph Formatting](http://www.lispworks.com/documentation/lw44/CLIM/html/climguide-283.htm)_
 
     * McCLIM defines a function, `class-grapher` in
       file `mcclim:Apps;Listener;dev-commands`, which uses that
