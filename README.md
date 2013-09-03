@@ -42,3 +42,36 @@ Further notes:
 * The protocol should be designed in such a way as that it can easily
   be adapated for presentation of _directory-model resources_, such as
   ASDF sysetm definitions and conventional filesystem directories
+
+* CLIM defines a generic graphing protocol, including the procedure,
+  `format-graph-from-roots`
+
+    * McCLIM defines a function, `class-grapher` in
+      file `mcclim:Apps;Listener;dev-commands`, which uses that
+      function. That code is a part of the _McCLIM Lisp Listener_, and
+      is defined in the ASDF system, `clim-listener` - run with
+      `(clim-listener:run-listener)`. Note however that the
+      interaction/input model for the class structure display commands
+      may be difficult to figure out - that regardless of the name
+      entered, even with STANDARD-CLASS, the input is apparently not
+      complete, and the class super/subclass structure is never
+      displayed. When the name is quoted initially, within the input
+      field, the following is output in the Lisp's initial REPL.x
+
+
+	accepting-values accept condition: Input 'STANDARD-CLASS is not of required type CLASS-NAME
+	accepting-values accept condition: Input 'STANDARD-CLAS is not of required type CLASS-NAME
+	accepting-values accept condition: Input 'STANDARD-CLA is not of required type CLASS-NAME
+	accepting-values accept condition: Input 'STANDARD-CL is not of required type CLASS-NAME
+	accepting-values accept condition: Input 'STANDARD-C is not of required type CLASS-NAME
+	accepting-values accept condition: Input 'STANDARD- is not of required type CLASS-NAME
+	accepting-values accept condition: Input 'STANDARD is not of required type CLASS-NAME
+	accepting-values accept condition: Input 'STANDAR is not of required type CLASS-NAME
+	accepting-values accept condition: Input 'STANDA is not of required type CLASS-NAME
+	accepting-values accept condition: Input 'STAND is not of required type CLASS-NAME
+	accepting-values accept condition: Input 'STAN is not of required type CLASS-NAME
+	accepting-values accept condition: Input 'STA is not of required type CLASS-NAME
+	accepting-values accept condition: Input 'ST is not of required type CLASS-NAME
+	accepting-values accept condition: Input 'S is not of required type CLASS-NAME
+	accepting-values accept condition: Error parsing "'" for presentation type CLASS-NAME
+	accepting-values accept condition: Error parsing "" for presentation type CLASS-NAME
