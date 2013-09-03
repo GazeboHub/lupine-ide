@@ -32,3 +32,13 @@ view of the resources denoted in the graphical tree.
 6. Define _present_ methods for each of the _container-node_ and
    _leaf-node_ presentation types, on each of the respective _pane
    classes_
+
+Further notes:
+
+* The tree pane must _present_ not only the _nodes_ in a
+  tree, but also the (in at least a DAG model) the _relations_ among nodes
+  in the tree.
+
+* The protocol should be designed in such a way as that it can easily
+  be adapated for presentation of _directory-model resources_, such as
+  ASDF sysetm definitions and conventional filesystem directories
